@@ -1,0 +1,17 @@
+<h1>Lessons</h1>
+
+<div class="cards">
+  <% @lessons.each do |lesson| %>
+  <div class='card'>
+    <%= link_to lesson_path(lesson), class: "card-link" do %>
+    <p>Language: <%= lesson.language %></p>
+    <p>Level: <%= lesson.level %></p>
+    <p>Length: <%= lesson.time %></p>
+    <p>Price: £<%= lesson.price %>/hour</p>
+  </div>
+
+  <% end %>
+  <% end %>
+</div>
+
+<%= link_to 'Back home', root_path %>

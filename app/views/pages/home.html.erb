@@ -1,2 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <div class="home-banner">
+    <h1 class='text-center'>Linguistic</h1>
+    <p class='text-center'>Learning a language is more than just gaining a skill, it opens a whole new cultural world to explore.</p>
+    <p class="text-center">Start today!</p>
+  </div>
+
+</div>
+
+<form novalidate="novalidate" class="simple_form search form-inline justify-content-center" action="/lessons" accept-charset="UTF-8" method="get">
+        <div class="form-group select optional search_language mb-2 ">
+          <label class="select optional mr-2" for="search_language">Choose your language</label>
+          <select class="form-control select optional mr-3" name="search[language]" id="search_language">
+            <option value=""></option>
+<option value="French">French</option>
+<option value="Spanish">Spanish</option>
+<option value="Italian">Italian</option>
+<option value="English">English</option>
+<option value="German">German</option>
+<option value="Japanese">Japanese</option>
+<option value="Arabic">Arabic</option>
+<option value=" Mandarin"> Mandarin</option></select></div>
+        <div class="form-group select optional search_level mr-3"><label class="select optional mr-2" for="search_level">Select your level</label><select class="form-control select optional" name="search[level]" id="search_level"><option value=""></option>
+<option value="Beginner">Beginner</option>
+<option value="Intermediate">Intermediate</option>
+<option value="Advanced">Advanced</option></select></div>
+        <div class="form-group select optional search_time mr-3"><label class="select optional mr-2" for="search_time">How long do you want your lesson to be?</label><select class="form-control select optional mr-3" name="search[time]" id="search_time"><option value=""></option>
+<option value="30 minutes">30 minutes</option>
+<option value="1 hour">1 hour</option>
+<option value="2 hours">2 hours</option>
+<option value="> 2 hours">&gt; 2 hours</option></select></div>
+        <input type="submit" name="commit" value="search" class="submit-btn" data-disable-with="search">
+
+</form>
+

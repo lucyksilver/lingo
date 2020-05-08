@@ -1,0 +1,7 @@
+<%= simple_form_for @lesson do |f| %>
+  <%= f.input :language, label: "Choose your language", collection: $languages %>
+  <%= f.input :level, label: "Choose your level", collection: $levels %>
+  <%= f.input :time, label: "How long is your lesson?", collection: $time %>
+  <%= f.input :price, label: "How much does it cost in £/hour?"%>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>

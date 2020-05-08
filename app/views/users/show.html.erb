@@ -1,0 +1,19 @@
+
+<h1>Your Bookings</h1>
+<% @bookings.each do |booking| %>
+Your teacher's email: <%= booking.lesson.user.email %>
+<%= booking.lesson.language %>
+<%= booking.lesson.level %>
+<% end %>
+
+  <div class='cards'>
+    <h1>Your lessons to teach</h1>
+  <% @user.lessons.each do |lesson| %>
+  <div class='card'>
+    <%= lesson.language %>
+    <%= lesson.level %>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to 'Home',  root_path %>

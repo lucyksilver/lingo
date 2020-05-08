@@ -1,1 +1,4 @@
-
+<%= simple_form_for [ @lesson, @booking ] do |f| %>
+  <%= f.input :description, placeholder: "Your message to the prof", label: false %>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>

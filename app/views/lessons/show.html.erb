@@ -1,0 +1,13 @@
+<h1><%= @lesson.language %></h1>
+<p><%= @lesson.description %></p>
+<p><%= @lesson.level %></p>
+<p>£<%= @lesson.price %>/hour</p>
+<p><%= @lesson.time %></p>
+
+<% if @user != @lesson.user %>
+<%= link_to "Book this lesson", new_lesson_booking_path(@lesson) %>
+<% else %>
+  <p>You're the teacher for this lesson!</p>
+<% end %>
+<p><%= link_to "back to all lessons", lessons_path %></p>
+

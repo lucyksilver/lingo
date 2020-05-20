@@ -11,21 +11,34 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.find(params[:lesson_id])
-    @user = current_user
     @booking = Booking.new(booking_params)
-    @booking.user = @user
-    @booking.lesson = @lesson
+    @booking.user = current_user
+    @booking.lesson = Lesson.find(params[:lesson_id])
     if @booking.save
-      redirect_to lesson_booking_path(@lesson, @booking)
+      redirect_to lesson_booking_path(@booking.lesson, @booking)
     else
       render :new
     end
+  end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_to lesson_booking_path(@booking.lesson, @booking)
+      else
+        render :edit
+      end
   end
 
   def destroy
-
+    @booking = Booking.find(params[:id])
+    @booking.delete
+    redirect_to lessons_path
   end
 
   private

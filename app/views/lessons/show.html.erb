@@ -8,6 +8,7 @@
 <%= link_to "Book this lesson", new_lesson_booking_path(@lesson) %>
 <% else %>
   <p>You're the teacher for this lesson!</p>
+  <%= link_to "Edit your lesson", edit_lesson_path(@lesson) %>
 <% end %>
 <p><%= link_to "back to all lessons", lessons_path %></p>
 

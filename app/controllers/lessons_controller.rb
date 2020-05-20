@@ -34,16 +34,23 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    @lesson = Lesson.find(params[:id])
 
   end
 
   def update
-
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+    if @lesson.save
+      redirect_to lesson_path(@lesson)
+    else
+      render :edit
+    end
   end
 
   private
 
   def lesson_params
-
+    params.require(:lesson).permit(:language, :level, :price, :time, :description)
   end
 end

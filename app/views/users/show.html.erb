@@ -1,18 +1,38 @@
 
-<h1>Your Bookings</h1>
-<% @bookings.each do |booking| %>
-Your teacher's email: <%= booking.lesson.user.email %>
-<%= booking.lesson.language %>
-<%= booking.lesson.level %>
-<% end %>
+<h1>Your Bookings 1</h1>
+<!-- using through -->
+<ul>
+  <h3><% @user.language_lessons.each do |lesson| %></h3>
+  <li>
+    Language: <%= lesson.language %>,
+    Teacher email: <%= lesson.user.email %>,
+    Level: <%= lesson.level %></li>
+  <% end %>
+</ul>
+
+<h2>bookings 2</h2>
+<!-- not using through -->
+<ul>
+  <% @bookings.each do |booking| %>
+    <%= link_to lesson_booking_path(booking.lesson, booking) do %>
+    <li>Your teacher's email: <%= booking.lesson.user.email %>
+      <%= booking.lesson.language %>
+      <%= booking.lesson.level %>
+        <%= booking.id %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
 
   <div class='cards'>
     <h1>Your lessons to teach</h1>
   <% @user.lessons.each do |lesson| %>
-  <div class='card'>
-    <%= lesson.language %>
-    <%= lesson.level %>
-  </div>
+    <div class='card'>
+      <%= link_to lesson_path(lesson) do %>
+        <%= lesson.language %>
+        <%= lesson.level %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

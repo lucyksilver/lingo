@@ -8,12 +8,14 @@
   </button>
 
 
-<div class='justify-content-left mr-3'>
+<div class='justify-space-between mr-3'>
 <% if user_signed_in? %>
   <%= link_to "View all lessons", lessons_path, class: 'mr-3' %>
-  <%= link_to "My profile", user_path(current_user), class: 'mr-3'  %>
   <%= link_to "Teach a lesson", new_lesson_path, class: 'mr-3'  %>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <%= link_to "Join a club", clubs_path, class: 'mr-3'  %>
+  <%= link_to "Create a club", new_club_path, class: 'mr-3'  %>
+  <%= link_to "My profile", user_path(current_user), class: 'mr-3'  %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% else %>
         <%= link_to "Login", new_user_session_path, id: "nav-link" %>
 <% end %>

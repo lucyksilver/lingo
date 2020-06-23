@@ -1,0 +1,8 @@
+<h2>Create a new language club</h2>
+
+<%= simple_form_for @club do |f| %>
+  <%= f.input :name, label: "Choose a name for your club" %>
+  <%= f.input :location, label: "Choose your location" %>
+  <%= f.input :description, label: "Tell us more... What languages? Are you open to all levels?" %>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>

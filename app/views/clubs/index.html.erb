@@ -1,0 +1,14 @@
+<div class='container'>
+    <div class="cards">
+        <% @clubs.each do |club| %>
+            <%= link_to club_path(club) do %>
+        <div class='card-white'>
+            <p>Club Name:
+            <%= club.name %></p>
+            <p>Location:
+            <%= club.location %></p>
+        <% end %>
+        </div>
+        <% end %>
+    </div>
+</div>

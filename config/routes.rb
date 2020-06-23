@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :show]
   end
 
-  resources :club do
+  resources :clubs, except: :destroy do
      resources :club_registrations, only: [:new, :create, :show]
    end
 

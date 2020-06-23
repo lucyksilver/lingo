@@ -1,17 +1,29 @@
 <h1>Lessons</h1>
 
+<div>
+  <%= form_tag lessons_path, method: :get do %>
+    <%= text_field_tag :query, params[:query],
+      class: "form-control",
+      placeholder: "Find a lesson", input_html: {value: ""}
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class='container'>
 <div class="cards">
   <% @lessons.each do |lesson| %>
-  <div class='card'>
-    <%= link_to lesson_path(lesson), class: "card-link" do %>
+    <%= link_to lesson_path(lesson) do %>
+  <div class='card-white'>
     <p>Language: <%= lesson.language %></p>
     <p>Level: <%= lesson.level %></p>
     <p>Length: <%= lesson.time %></p>
     <p>Price: £<%= lesson.price %>/hour</p>
+    <p><%= lesson.user.email %></p>
   </div>
 
   <% end %>
   <% end %>
+</div>
 </div>
 
 <%= link_to 'Back home', root_path %>

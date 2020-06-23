@@ -4,5 +4,5 @@
 <%= link_to "home",  root_path%>
 <% if @booking.user == current_user %>
 <%= link_to "edit your booked lesson", edit_booking_path(@booking) %>
-<%= link_to "delete your booked lesson", booking_destroy_path(@booking), method: :delete, data: { confirm: "Delete your #{@lesson.language} lesson?" } %>
+<%= link_to "delete your booked lesson", booking_path(@booking), method: :delete, data: { confirm: "Delete your #{@lesson.language} lesson?" } %>
 <% end %>

@@ -7,10 +7,14 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :show]
   end
 
-  resources :bookings, only: [:edit, :update]
+  resources :club do
+     resources :club_registrations, only: [:new, :create, :show]
+   end
+
+  resources :bookings, only: [:edit, :update, :destroy]
   resources :users, only: :show
 
 
-  resources :bookings, only: :destroy, as: 'booking_destroy'
+
 end
 

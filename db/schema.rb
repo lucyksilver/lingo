@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_143125) do
+ActiveRecord::Schema.define(version: 2020_06_23_144821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,25 @@ ActiveRecord::Schema.define(version: 2020_05_07_143125) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "club_registrations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "club_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_club_registrations_on_club_id"
+    t.index ["user_id"], name: "index_club_registrations_on_user_id"
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -52,5 +71,8 @@ ActiveRecord::Schema.define(version: 2020_05_07_143125) do
 
   add_foreign_key "bookings", "lessons"
   add_foreign_key "bookings", "users"
+  add_foreign_key "club_registrations", "clubs"
+  add_foreign_key "club_registrations", "users"
+  add_foreign_key "clubs", "users"
   add_foreign_key "lessons", "users"
 end

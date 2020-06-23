@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :lessons
   has_many :bookings
+  has_many :clubs
+  has_many :club_registrations
   has_many :language_lessons, through: :bookings, source: :lesson
 end

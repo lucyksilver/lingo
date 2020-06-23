@@ -11,8 +11,14 @@ class LessonsController < ApplicationController
       search_hash = params.require(:search).permit(:language, :level, :time)
       search_hash.delete_if {|key, value| value == ""}
       @lessons = @lessons.where(search_hash)
+
+    elsif params[:query].present?
+      @lessons = @lessons.search_by_language(params[:query])
     end
+
   end
+
+
 
   def show
     @lesson = Lesson.find(params[:id])

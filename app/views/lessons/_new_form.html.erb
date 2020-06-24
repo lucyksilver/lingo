@@ -1,0 +1,80 @@
+<form class="simple_form new_lesson" id="new_lesson" novalidate="novalidate" action="/lessons" accept-charset="UTF-8" method="post">
+<h3 class='blue-text font-weight-bold'>Tell us what you'll be teaching</h3>
+    <input type="hidden" name="authenticity_token" value="EeBI3kpuHiZq7HQ9WsZUK0oK/U/bbgCg5WV1zLH2ov31mKQjSL4ciK4qNw3dH2OXeBeolarW4nDxxxO5G6twow==">
+    <fieldset class="form-group radio_buttons optional lesson_language">
+        <legend class="col-form-label pt-5 blue-text font-weight-bold">Choose your language to teach</legend><input type="hidden" name="lesson[language]" value="">
+        <div class="form-check languages p-3 d-inline">
+            <input class="d-none inline-block" type="hidden" value="French" name="lesson[language]" id="lesson_language_french">
+            <label class="form-check-label collection_radio_buttons click-hand" style="cursor:pointer" for="lesson_language_french">French</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+            <input class="d-none" type="hidden" value="French" name="lesson[language]" id="lesson_language_spanish">
+            <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_spanish">Spanish</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="d-none" type="hidden" value="French" name="lesson[language]" id="lesson_language_italian">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_italian">Italian</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="English" name="lesson[language]" id="lesson_language_english">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_english">English</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="German" name="lesson[language]" id="lesson_language_german">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_german">German</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="Japanese" name="lesson[language]" id="lesson_language_japanese">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_japanese">Japanese</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="Arabic" name="lesson[language]" id="lesson_language_arabic">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language_arabic">Arabic</label>
+        </div>
+        <div class="form-check languages p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value=" Mandarin" name="lesson[language]" id="lesson_language__mandarin">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_language__mandarin"> Mandarin</label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group radio_buttons optional lesson_level">
+        <legend class="col-form-label pt-5 blue-text font-weight-bold">Choose your level</legend><input type="hidden" name="lesson[level]" value="">
+        <div class="form-check level p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="Beginner" name="lesson[level]" id="lesson_level_beginner">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_level_beginner">Beginner</label>
+        </div>
+        <div class="form-check level p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="Intermediate" name="lesson[level]" id="lesson_level_intermediate">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_level_intermediate">Intermediate</label>
+        </div>
+        <div class="form-check level p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="Advanced" name="lesson[level]" id="lesson_level_advanced">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_level_advanced">Advanced</label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group radio_buttons optional lesson_time">
+        <legend class="col-form-label pt-5 blue-text font-weight-bold">How long is your lesson?</legend><input type="hidden" name="lesson[time]" value="">
+        <div class="form-check length p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="30 minutes" name="lesson[time]" id="lesson_time_30_minutes">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_time_30_minutes">30 minutes</label>
+        </div>
+        <div class="form-check length p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="1 hour" name="lesson[time]" id="lesson_time_1_hour">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_time_1_hour">1 hour</label>
+        </div>
+        <div class="form-check length p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="2 hours" name="lesson[time]" id="lesson_time_2_hours">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_time_2_hours">2 hours</label>
+        </div>
+        <div class="form-check length p-3 d-inline">
+          <input class="form-check-input radio_buttons optional" type="hidden" value="> 2 hours" name="lesson[time]" id="lesson_time__2_hours">
+          <label class="form-check-label collection_radio_buttons" style="cursor:pointer" for="lesson_time__2_hours">&gt; 2 hours</label>
+        </div>
+    </fieldset>
+    <div class="form-group integer optional lesson_price pt-5">
+      <label class="integer optional blue-text" for="lesson_price font-weight-bold">How much does it cost in £/hour?</label>
+      <input class="form-control numeric integer optional" type="number" step="1" name="lesson[price]" id="lesson_price"></div>
+    <input type="submit" name="commit" value="Teach!" class="btn btn-primary mt-3" data-disable-with="Submit booking">
+</form>
+

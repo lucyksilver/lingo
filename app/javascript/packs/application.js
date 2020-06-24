@@ -22,3 +22,13 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+import { lessonSelection } from '../components/lesson_selection';
+import { levelSelection } from '../components/level_selection';
+import { lengthSelection } from '../components/length_selection';
+
+document.addEventListener('turbolinks:load', () => {
+  lessonSelection();
+  levelSelection();
+  lengthSelection();
+
+  });
